@@ -32,3 +32,11 @@ resource "aws_subnet" "private" {
     Name = "${var.env_prefix}-private-${count.index + 1}"
   }, var.tags)
 }
+
+# Internet Gateway
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.main.id
+  tags = merge({
+    Name = "${var.env_prefix}-igw"
+  }, var.tags)
+}
