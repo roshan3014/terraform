@@ -22,3 +22,13 @@ variable "tags" {
   type    = map(string)
   default = {}
 }
+
+variable "single_nat_gateway" {
+  type    = bool
+  default = true
+}
+
+variable "enable_nat_gateway" {
+  type    = bool
+  default = true
+}
